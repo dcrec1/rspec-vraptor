@@ -1,0 +1,2 @@
+module Rspec-vraptor
+end
