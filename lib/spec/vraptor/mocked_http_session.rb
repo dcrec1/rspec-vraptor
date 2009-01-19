@@ -1,4 +1,4 @@
-class MockedSession
+class MockedHttpSession
   include HttpSession
   attr_accessor :attributes, :context, :id
   
@@ -22,5 +22,9 @@ class MockedSession
   
   def get_servlet_context
     @context
+  end
+  
+  def remove_attribute(key)
+    @attributes.delete(key)
   end
 end

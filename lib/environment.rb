@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'spec'
 require 'rhyme'
 
@@ -12,9 +13,13 @@ import org.vraptor.VRaptorFilter
 import java.util.HashSet
 import java.util.Locale
 
-require 'spec/vraptor/mocked_context'
-require 'spec/vraptor/mocked_config'
-require 'spec/vraptor/mocked_dispatcher'
-require 'spec/vraptor/mocked_request'
-require 'spec/vraptor/mocked_response'
-require 'spec/vraptor/mocked_session'
+def req(x)
+  require File.dirname(__FILE__) + "/spec/vraptor/mocked_#{x}"
+end
+
+req 'config'
+req 'http_session'
+req 'request'
+req 'request_dispatcher'
+req 'response'
+req 'servlet_context'

@@ -1,4 +1,4 @@
-class MockedContext
+class MockedServletContext
   include ServletContext
   attr_accessor :attributes, :init_parameters, :basic_path
   

@@ -6,7 +6,7 @@ class MockedRequest
     @locale = locale
     @attributes = injection
     @headers = {'Host' => '72.14.205.100'}.merge! headers
-    @dispatcher, @session, @request_uri, @parameter_map = MockedDispatcher.new, session, uri, map
+    @dispatcher, @session, @request_uri, @parameter_map = MockedRequestDispatcher.new, session, uri, map
   end
   
   def get_request_dispatcher(x)

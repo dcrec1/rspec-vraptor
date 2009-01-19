@@ -1,4 +1,4 @@
-class MockedDispatcher
+class MockedRequestDispatcher
   include RequestDispatcher
   
   def forward(request, response)
