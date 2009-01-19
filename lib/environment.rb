@@ -13,6 +13,7 @@ import java.util.HashSet
 import java.util.Locale
 
 require 'spec/vraptor/mocked_context'
+require 'spec/vraptor/mocked_config'
 require 'spec/vraptor/mocked_dispatcher'
 require 'spec/vraptor/mocked_request'
 require 'spec/vraptor/mocked_response'
