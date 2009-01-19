@@ -6,19 +6,18 @@ require 'spec/rake/spectask'
  
 GEM = "rspec-vraptor"
 GEM_VERSION = "0.2.0"
-SUMMARY = "FIXME Summary"
-AUTHOR = "FIXME Author"
-EMAIL = "FIXME Email"
-HOMEPAGE = "FIXME HomePage"
+SUMMARY = "RSpec for VRaptor Sexy URLs"
+AUTHOR = "Diego Carrion"
+EMAIL = "dc.rec1@gmail.com"
+HOMEPAGE = "http://www.diegocarrion.com"
 
- 
 spec = Gem::Specification.new do |s|
   s.name = GEM
   s.version = GEM_VERSION
   s.platform = Gem::Platform::RUBY
   s.summary = SUMMARY
   s.require_paths = ['lib']
-  s.files = FileList['lib/**/*.rb' '[A-Z]*'].to_a
+  s.files = FileList['lib/**/*.rb','[A-Z]*'].to_a
   
   s.author = AUTHOR
   s.email = EMAIL
