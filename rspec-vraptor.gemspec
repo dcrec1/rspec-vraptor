@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.authors = ["Diego Carrion"]
   s.date = %q{2009-01-19}
   s.email = %q{dc.rec1@gmail.com}
-  s.files = ["lib/spec/vraptor.rb", "lib/spec/vraptor/mocked_session.rb", "lib/spec/vraptor/mocked_response.rb", "lib/spec/vraptor/mocked_context.rb", "lib/spec/vraptor/mocked_request.rb", "lib/spec/vraptor/mocked_dispatcher.rb", "lib/environment.rb", "README.textile", "Rakefile"]
+  s.files = ["lib/spec/vraptor.rb", "lib/spec/vraptor/mocked_session.rb", "lib/spec/vraptor/mocked_response.rb", "lib/spec/vraptor/mocked_config.rb", "lib/spec/vraptor/mocked_context.rb", "lib/spec/vraptor/mocked_request.rb", "lib/spec/vraptor/mocked_dispatcher.rb", "lib/environment.rb", "README.textile", "Rakefile"]
   s.homepage = %q{http://www.diegocarrion.com}
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{rspec-vraptor}
