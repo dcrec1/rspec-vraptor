@@ -19,7 +19,7 @@ end
 
 req 'config'
 req 'http_session'
-req 'request'
+req 'http_request'
 req 'request_dispatcher'
 req 'response'
 req 'servlet_context'

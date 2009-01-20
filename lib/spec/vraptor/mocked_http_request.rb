@@ -1,4 +1,4 @@
-class MockedRequest
+class MockedHttpRequest
   include HttpServletRequest
   attr_accessor :dispatcher, :session, :request_uri, :parameter_map, :headers, :attributes, :locale
   
@@ -26,7 +26,15 @@ class MockedRequest
   end
   
   def get_context_path
-    ""
+    "myapp"
+  end
+  
+  def get_server_name
+    'localhost'
+  end
+    
+  def get_server_port
+    80
   end
   
   def get_parameter_map

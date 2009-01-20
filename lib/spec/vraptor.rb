@@ -5,7 +5,7 @@ def get(x, params_request = {}, params_session = {}, injection = {}, headers = {
   @response = MockedResponse.new
   dispatcher = MockedRequestDispatcher.new
   @session = MockedHttpSession.new($context, params_session, @session_id)
-  @request = MockedRequest.new(dispatcher, @session, x, Rhyme.translate(params_request), injection, headers, Locale.new('en', 'US'))
+  @request = MockedHttpRequest.new(dispatcher, @session, x, Rhyme.translate(params_request), injection, headers, Locale.new('en', 'US'))
 
   $filter.do_filter(@request, @response, $chain)
 end
