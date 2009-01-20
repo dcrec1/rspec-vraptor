@@ -26,7 +26,7 @@ class MockedHttpRequest
   end
   
   def get_context_path
-    "myapp"
+    ""
   end
   
   def get_server_name
@@ -34,7 +34,7 @@ class MockedHttpRequest
   end
     
   def get_server_port
-    80
+    8080
   end
   
   def get_parameter_map
