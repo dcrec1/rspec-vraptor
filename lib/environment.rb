@@ -20,6 +20,6 @@ end
 req 'config'
 req 'http_session'
 req 'http_request'
+req 'http_response'
 req 'request_dispatcher'
-req 'response'
 req 'servlet_context'

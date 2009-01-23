@@ -27,4 +27,5 @@ class MockedHttpSession
   def remove_attribute(key)
     @attributes.delete(key)
   end
+  
 end
