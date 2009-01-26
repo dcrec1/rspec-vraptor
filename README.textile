@@ -1,4 +1,6 @@
-Before runnint specs:
+h2. SPECING:
+
+Before running specs:
 
 [code]export CLASSPATH=inc/servlet-api-2.5.jar:inc/vraptor-2.6.3.jar:inc/log4j-1.2.12.jar[/code]
 
