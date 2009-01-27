@@ -1,8 +1,51 @@
+h2. INSTALLATION
+
+<pre><code>jruby -S gem install dcrec1-rspec-vraptor -s http://gems.github.com</code></pre>
+
+h2. USAGE
+
+Include the rspec and rspec-vraptor gems in your specs:
+
+<pre><code>require 'spec'
+require 'spec/vraptor'</code></pre>
+
+Now write code like this:
+
+<pre><code>import com.mouseoverstudio.myapp.controller.UserController
+import com.mouseoverstudio.myapp.model.User
+
+describe UserController do
+
+  context "show service" do
+  
+    before :all do
+      get "/user/xpto", :request => {'param1' => 'value1'}, 
+                        :session => {'login' => 'dcrec1'}, 
+                        :inject => {'user' => User.new("Bruce")},
+                        :headers => {'Host' => '20.85.17.10'}
+    end
+    
+    it "should send to the view an attribute 'logged' as true" do
+      @request.attributes['logged'].should be_true
+    end
+    
+    it "should return 203 as http response code" do
+      @response.status.should eql(203)
+    end
+    
+    it "should save param1 in session" do
+      @session.attributes['param1'].should eql('value')
+    end
+  
+  end
+
+end</code></pre>
+
 h2. SPECING:
 
 Before running specs:
 
-[code]export CLASSPATH=inc/servlet-api-2.5.jar:inc/vraptor-2.6.3.jar:inc/log4j-1.2.12.jar[/code]
+<pre><code>export CLASSPATH=inc/servlet-api-2.5.jar:inc/vraptor-2.6.3.jar:inc/log4j-1.2.12.jar</code></pre>
 
 h2. LICENSE:
 
