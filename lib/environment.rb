@@ -23,3 +23,7 @@ req 'http_request'
 req 'http_response'
 req 'request_dispatcher'
 req 'servlet_context'
+
+Spec::Runner.configure do |config|
+  config.include(VRaptorMatchers)
+end
