@@ -4,9 +4,8 @@ def get(x, map = {}) #params_request = {}, params_session = {}, injection = {}, 
   init
   params = {:request => {}, :session => {}, :inject => {}, :headers => {}}.merge map
   @response = MockedHttpResponse.new
-  dispatcher = MockedRequestDispatcher.new
   @session = MockedHttpSession.new($context, params[:session], @session_id)
-  @request = MockedHttpRequest.new(dispatcher, @session, x, Rhyme.translate(params[:request]), params[:inject], params[:headers], Locale.new('en', 'US'))
+  @request = MockedHttpRequest.new(@session, x, Rhyme.translate(params[:request]), params[:inject], params[:headers], Locale.new('en', 'US'))
 
   $filter.do_filter(@request, @response, $chain)
 end

@@ -18,4 +18,8 @@ describe MockedHttpRequest do
     @request.get_context_path.should eql('')
   end
   
+  it "should keep the request dispatcher" do
+    @request.get_request_dispatcher("xpto").should eql(@request.dispatcher)
+  end
+  
 end

@@ -5,7 +5,7 @@ def mocked_http_session
 end
 
 def mocked_http_request
-  MockedHttpRequest.new(nil, nil, nil, nil, nil, {}, nil)
+  MockedHttpRequest.new(nil, nil, nil, nil, {}, nil)
 end
 
 def mocked_http_response

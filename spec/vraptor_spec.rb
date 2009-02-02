@@ -18,6 +18,6 @@ describe "VRaptor" do
       get "x/y"
     end
     
-  end  
+  end
   
 end

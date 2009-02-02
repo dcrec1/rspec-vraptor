@@ -2,14 +2,15 @@ class MockedHttpRequest
   include HttpServletRequest
   attr_accessor :dispatcher, :session, :request_uri, :parameter_map, :headers, :attributes, :locale
   
-  def initialize(dispatcher, session, uri, map, injection, headers, locale)
+  def initialize(session, uri, map, injection, headers, locale)
     @locale = locale
     @attributes = injection
     @headers = {'Host' => '72.14.205.100'}.merge! headers
-    @dispatcher, @session, @request_uri, @parameter_map = MockedRequestDispatcher.new, session, uri, map
+    @session, @request_uri, @parameter_map = session, uri, map
   end
   
   def get_request_dispatcher(x)
+    @dispatcher = MockedRequestDispatcher.new(x)
     @dispatcher
   end
   
