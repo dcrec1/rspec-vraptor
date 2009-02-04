@@ -22,4 +22,10 @@ describe MockedHttpRequest do
     @request.get_request_dispatcher("xpto").should eql(@request.dispatcher)
   end
   
+  it "should match a renderization" do
+    file = "my/file.rb"
+    @request.get_request_dispatcher("/#{file}").forward(nil, nil)
+    @request.should render(file)
+  end
+  
 end

@@ -1,6 +1,6 @@
 class MockedHttpResponse
   include HttpServletResponse
-  attr_accessor :status, :error
+  attr_accessor :status, :error, :target
   
   def initialize
     @status = 200
@@ -15,32 +15,11 @@ class MockedHttpResponse
   end
   
   def send_redirect(path)
-    @redirect = path
+    @target = path
   end
   
   def destination
-    @redirect
+    @target
   end
   
-end
-
-module VRaptorMatchers
-  class RedirectTo
-    def initialize(path)
-      @path = path
-    end
-    
-    def matches?(target)
-      @target = target
-      @target.destination.eql? @path
-    end
-    
-    def failure_message
-      "expected response to redirect to #{@target.destination}, is redirecting to #{@path}"
-    end
-  end
-  
-  def redirect_to(expected)
-    RedirectTo.new(expected)
-  end
 end

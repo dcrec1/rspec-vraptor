@@ -3,7 +3,8 @@ require 'spec/spec_helper'
 describe MockedRequestDispatcher do
 
   before :each do
-    @target = "fwegweg"
+    @host = "mouseoverstudio.com"
+    @target = "/#{@host}"
     @dispatcher = MockedRequestDispatcher.new(@target)
   end
 

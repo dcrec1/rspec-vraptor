@@ -14,15 +14,20 @@ import java.util.HashSet
 import java.util.Locale
 
 def req(x)
-  require File.dirname(__FILE__) + "/spec/vraptor/mocked_#{x}"
+  require File.dirname(__FILE__) + "/spec/vraptor/#{x}"
 end
 
-req 'config'
-req 'http_session'
-req 'http_request'
-req 'http_response'
-req 'request_dispatcher'
-req 'servlet_context'
+def req_mocked(x)
+  req "mocked_#{x}"
+end
+
+req 'matchers'
+req_mocked 'config'
+req_mocked 'http_session'
+req_mocked 'http_request'
+req_mocked 'http_response'
+req_mocked 'request_dispatcher'
+req_mocked 'servlet_context'
 
 Spec::Runner.configure do |config|
   config.include(VRaptorMatchers)
