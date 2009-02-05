@@ -19,13 +19,13 @@ describe MockedHttpResponse do
   end
   
   it "should redirect to an URL" do
-    url = "http://wwwmouseoverstudio.com"
+    url = "http://www.mouseoverstudio.com"
     @response.send_redirect url
     @response.should redirect_to(url)
   end
   
   it "should have a target" do
-    url = "http://wwwmouseoverstudio.com"
+    url = "http://www.mouseoverstudio.com"
     @response.send_redirect url
     @response.target.should eql(url)
   end

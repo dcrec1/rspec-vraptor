@@ -4,13 +4,13 @@ module VRaptorMatchers
       @path = path
     end
     
-    def matches?(target)
-      @target = target
-      @target.destination.eql? @path
+    def matches?(response)
+      @response = response
+      @response.destination.eql? @path
     end
     
     def failure_message
-      "expected response to redirect to #{@target.destination}, is redirecting to #{@path}"
+      "expected response to redirect to #{@path}, is redirecting to #{@response.destination}"
     end
   end
   
@@ -29,7 +29,7 @@ module VRaptorMatchers
     end
     
     def failure_message
-      "expected response to redirect to #{@dispatcher.target}, is redirecting to #{@target}"
+      "expected request to render #{@target}, is rendering #{@dispatcher.target}"
     end
   end
   
