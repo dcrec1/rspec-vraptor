@@ -14,8 +14,12 @@ describe MockedHttpRequest do
     @request.get_server_name.should eql('localhost')
   end
   
+  it "should have a context path attribute" do
+    @request.context_path.should_not eql('')
+  end
+  
   it "should get the context path" do
-    @request.get_context_path.should eql('')
+    @request.get_context_path.should_not eql('')
   end
   
   it "should keep the request dispatcher" do

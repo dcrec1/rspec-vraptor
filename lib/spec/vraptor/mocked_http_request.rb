@@ -1,6 +1,6 @@
 class MockedHttpRequest
   include HttpServletRequest
-  attr_accessor :dispatcher, :session, :request_uri, :parameter_map, :headers, :attributes, :locale
+  attr_accessor :dispatcher, :session, :request_uri, :parameter_map, :headers, :attributes, :locale, :context_path
   
   def initialize(session, uri, map, injection, headers, locale)
     @locale = locale
@@ -27,7 +27,7 @@ class MockedHttpRequest
   end
   
   def get_context_path
-    ""
+    "myapp"
   end
   
   def get_server_name
