@@ -14,12 +14,12 @@ describe MockedHttpRequest do
     @request.get_server_name.should eql('localhost')
   end
   
-  it "should have a context path attribute" do
-    @request.context_path.should_not eql('')
+  it "should get the context path" do
+    @request.get_context_path.length.should > 0
   end
   
-  it "should get the context path" do
-    @request.get_context_path.should_not eql('')
+  it "should have a context path attribute" do
+    @request.context_path.should eql(@request.get_context_path)
   end
   
   it "should keep the request dispatcher" do
@@ -30,6 +30,12 @@ describe MockedHttpRequest do
     file = "my/file.rb"
     @request.get_request_dispatcher("/#{file}").forward(nil, nil)
     @request.should render(file)
+  end
+  
+  it "should add context path to request uri" do
+    path = "/a/b/c"
+    req = MockedHttpRequest.new(nil, path, nil, nil, {}, nil)
+    req.request_uri.should eql(req.context_path + path)
   end
   
 end

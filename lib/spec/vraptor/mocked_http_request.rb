@@ -6,7 +6,8 @@ class MockedHttpRequest
     @locale = locale
     @attributes = injection
     @headers = {'Host' => '72.14.205.100'}.merge! headers
-    @session, @request_uri, @parameter_map = session, uri, map
+    @context_path = "/sso"
+    @session, @request_uri, @parameter_map = session, @context_path + uri, map
   end
   
   def get_request_dispatcher(x)
@@ -27,7 +28,7 @@ class MockedHttpRequest
   end
   
   def get_context_path
-    "myapp"
+    @context_path
   end
   
   def get_server_name
