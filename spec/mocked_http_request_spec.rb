@@ -37,5 +37,9 @@ describe MockedHttpRequest do
     req = MockedHttpRequest.new(nil, path, nil, nil, {}, nil)
     req.request_uri.should eql(req.context_path + path)
   end
+
+  it "should get HTTP/1.1 as the default protocol" do
+    @request.get_protocol.should eql('HTTP/1.1')
+  end
   
 end
