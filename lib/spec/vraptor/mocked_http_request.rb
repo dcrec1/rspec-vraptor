@@ -62,4 +62,9 @@ class MockedHttpRequest
   def remove_attribute(x)
     @attributes.delete x
   end
+  
+  def get_protocol
+     "HTTP/1.1"
+  end  
+
 end
