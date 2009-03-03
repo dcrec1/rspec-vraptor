@@ -65,6 +65,10 @@ class MockedHttpRequest
   
   def get_protocol
      "HTTP/1.1"
-  end  
+  end
+  
+  def viewless?
+    @dispatcher.nil?
+  end
 
 end

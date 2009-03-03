@@ -42,4 +42,14 @@ describe MockedHttpRequest do
     @request.get_protocol.should eql('HTTP/1.1')
   end
   
+  it "should be viewless if dispatcher is nil" do
+    @request.dispatcher = nil
+    @request.should be_viewless
+  end
+  
+  it "should not be viewless if dispatcher is not nil" do
+    @request.dispatcher = Object.new
+    @request.should_not be_viewless
+  end
+  
 end
