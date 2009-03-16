@@ -41,5 +41,18 @@ describe MockedHttpRequest do
   it "should get HTTP/1.1 as the default protocol" do
     @request.get_protocol.should eql('HTTP/1.1')
   end
+<<<<<<< HEAD:spec/mocked_http_request_spec.rb
+=======
+  
+  it "should be viewless if dispatcher is nil" do
+    @request.dispatcher = nil
+    @request.should be_viewless
+  end
+  
+  it "should not be viewless if dispatcher is not nil" do
+    @request.dispatcher = Object.new
+    @request.should_not be_viewless
+  end
+>>>>>>> fc8a8c1700f4a9d90ee37882813c8a08d87b95fe:spec/mocked_http_request_spec.rb
   
 end

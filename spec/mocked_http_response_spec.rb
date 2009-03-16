@@ -30,4 +30,11 @@ describe MockedHttpResponse do
     @response.target.should eql(url)
   end
   
+  it "should receive a header" do
+    name = "MyHeader"
+    value = "afasegwe"
+    @response.add_header name, value
+    @response.headers[name].should eql(value)
+  end
+  
 end

@@ -65,6 +65,14 @@ class MockedHttpRequest
   
   def get_protocol
      "HTTP/1.1"
+<<<<<<< HEAD:lib/spec/vraptor/mocked_http_request.rb
   end  
+=======
+  end
+  
+  def viewless?
+    @dispatcher.nil?
+  end
+>>>>>>> fc8a8c1700f4a9d90ee37882813c8a08d87b95fe:lib/spec/vraptor/mocked_http_request.rb
 
 end

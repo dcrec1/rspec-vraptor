@@ -1,9 +1,10 @@
 class MockedHttpResponse
   include HttpServletResponse
-  attr_accessor :status, :error, :target
+  attr_accessor :status, :error, :target, :headers
   
   def initialize
     @status = 200
+    @headers = {}
   end
   
   def set_status(x)
@@ -20,6 +21,10 @@ class MockedHttpResponse
   
   def destination
     @target
+  end
+  
+  def add_header(name, value)
+    @headers[name] = value
   end
   
 end
