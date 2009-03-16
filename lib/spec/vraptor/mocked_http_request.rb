@@ -1,13 +1,14 @@
 class MockedHttpRequest
   include HttpServletRequest
-  attr_accessor :dispatcher, :session, :request_uri, :parameter_map, :headers, :attributes, :locale, :context_path
+  attr_accessor :dispatcher, :session, :request_uri, :parameter_map, :headers, :attributes, :locale, :context_path, :cookies
   
-  def initialize(session, uri, map, injection, headers, locale)
+  def initialize(session, uri, map, injection, headers, locale, cookies)
     @locale = locale
     @attributes = injection
     @headers = {'Host' => '72.14.205.100'}.merge! headers
     @context_path = "/sso"
     @session, @request_uri, @parameter_map = session, @context_path + uri, map
+    @cookies = cookies
   end
   
   def get_request_dispatcher(x)
@@ -65,14 +66,14 @@ class MockedHttpRequest
   
   def get_protocol
      "HTTP/1.1"
-<<<<<<< HEAD:lib/spec/vraptor/mocked_http_request.rb
-  end  
-=======
   end
   
   def viewless?
     @dispatcher.nil?
   end
->>>>>>> fc8a8c1700f4a9d90ee37882813c8a08d87b95fe:lib/spec/vraptor/mocked_http_request.rb
+
+  def get_cookies
+    @cookies
+  end
 
 end

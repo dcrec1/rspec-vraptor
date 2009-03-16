@@ -34,16 +34,14 @@ describe MockedHttpRequest do
   
   it "should add context path to request uri" do
     path = "/a/b/c"
-    req = MockedHttpRequest.new(nil, path, nil, nil, {}, nil)
+    req = MockedHttpRequest.new(nil, path, nil, nil, {}, nil, nil)
     req.request_uri.should eql(req.context_path + path)
   end
 
   it "should get HTTP/1.1 as the default protocol" do
     @request.get_protocol.should eql('HTTP/1.1')
   end
-<<<<<<< HEAD:spec/mocked_http_request_spec.rb
-=======
-  
+
   it "should be viewless if dispatcher is nil" do
     @request.dispatcher = nil
     @request.should be_viewless
@@ -53,6 +51,11 @@ describe MockedHttpRequest do
     @request.dispatcher = Object.new
     @request.should_not be_viewless
   end
->>>>>>> fc8a8c1700f4a9d90ee37882813c8a08d87b95fe:spec/mocked_http_request_spec.rb
-  
+
+   it "should get cookies" do
+	@cookies = {'SESSIONID' => 'A943A7E30E919DC'}	   
+   	req = MockedHttpRequest.new(nil, 'a/b/c', nil, nil, {}, nil, @cookies)
+  	req.get_cookies.should eql (@cookies)
+   end
+
 end

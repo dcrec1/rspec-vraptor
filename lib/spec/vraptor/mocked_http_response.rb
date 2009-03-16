@@ -1,10 +1,11 @@
 class MockedHttpResponse
   include HttpServletResponse
-  attr_accessor :status, :error, :target, :headers
+  attr_accessor :status, :error, :target, :headers, :cookies
   
   def initialize
     @status = 200
     @headers = {}
+    @cookies = {}
   end
   
   def set_status(x)
@@ -27,4 +28,8 @@ class MockedHttpResponse
     @headers[name] = value
   end
   
+  def add_cookie(name, value)
+    @cookies[name] = value
+  end
+
 end
