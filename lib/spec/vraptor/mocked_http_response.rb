@@ -28,8 +28,8 @@ class MockedHttpResponse
     @headers[name] = value
   end
   
-  def add_cookie(name, value)
-    @cookies[name] = value
+  def add_cookie(cookie)
+    @cookies[cookie.name] = cookie.value
   end
 
 end
