@@ -5,7 +5,7 @@ class MockedHttpResponse
   def initialize
     @status = 200
     @headers = {}
-    @cookies = {}
+    @cookies = Array.new
   end
   
   def set_status(x)
@@ -29,7 +29,7 @@ class MockedHttpResponse
   end
   
   def add_cookie(cookie)
-    @cookies[cookie.name] = cookie.value
+    @cookies << cookie
   end
 
 end
