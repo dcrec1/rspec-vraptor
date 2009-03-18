@@ -40,8 +40,9 @@ describe MockedHttpResponse do
    it "should add a cookie" do
     name = "MyCookie"
     value = "afasegwe"
-    @response.add_cookie name, value
-    @response.cookies[name].should eql(value)
+    cookie = MockedCookie.new(name,value)
+    @response.add_cookie cookie
+    @response.cookies[0].name.should eql(name)
   end
 
 end
