@@ -6,7 +6,7 @@ describe "VRaptor" do
   
     before :each do
       $init = true
-      $filter = mock(VRaptorFilter)
+      $filter = mock(filter)
       $filter.should_receive(:do_filter)
     end
 
@@ -19,5 +19,16 @@ describe "VRaptor" do
     end
     
   end
+
+  it "should init the filter" do
+    my_filter = mock(filter)
+    filter.stub!(:new).and_return(my_filter)
+    my_filter.should_receive(:init)
+    init
+  end
   
+end
+
+def filter
+  ($VRAPTOR_VERSION.eql?("Sexy") ? VRaptorFilter : NiceURLFilter)
 end

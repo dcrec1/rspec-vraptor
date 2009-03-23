@@ -6,7 +6,7 @@ class MockedHttpRequest
     @locale = locale
     @attributes = injection
     @headers = {'Host' => '72.14.205.100'}.merge! headers
-    @context_path = "/sso"
+    @context_path = "/context"
     @session, @request_uri, @parameter_map = session, @context_path + uri, map
     @cookies = cookies
   end

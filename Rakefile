@@ -1,4 +1,5 @@
-Dir["inc/*.jar"].each { |jar| $CLASSPATH << jar }
+$CLASSPATH << 'inc/log4j-1.2.12.jar'
+$CLASSPATH << 'inc/servlet-api-2.5.jar'
 
 require 'rubygems'
 require 'rubygems/specification'
@@ -28,10 +29,26 @@ spec = Gem::Specification.new do |s|
   s.rubyforge_project = GEM # GitHub bug, gem isn't being build when this miss
 end
 
-Spec::Rake::SpecTask.new do |t|
+Spec::Rake::SpecTask.new('spec') do |t|
   t.spec_files = FileList['spec/**/*_spec.rb']
   t.spec_opts = %w(--color)
 end
+
+task :set_sexy do
+  $CLASSPATH << 'inc/vraptor-2.6.3.jar'
+  $CLASSPATH << 'inc/picocontainer-1.3.jar' 
+end
+
+task :set_nice do
+  $CLASSPATH << 'inc/vraptor-2.6.0.jar' 
+  $CLASSPATH << 'inc/picocontainer-2.7.jar'
+end
+
+desc "Run specs for VRaptor Nice URLs"
+task :'spec:nice' => [:set_nice, :spec]
+
+desc "Run specs for VRaptor Sexy URLs"
+task :'spec:sexy' => [:set_sexy, :spec]
   
 Rake::GemPackageTask.new(spec) do |pkg|
   pkg.gem_spec = spec

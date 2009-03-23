@@ -7,7 +7,10 @@ class MockedFilterConfig
     @context = context
   end
   
-  def getServletContext
+  def get_servlet_context
     @context
+  end
+
+  def get_init_parameter(x)
   end
 end

@@ -10,7 +10,16 @@ import javax.servlet.FilterConfig
 import javax.servlet.FilterChain
 import javax.servlet.ServletContext
 import javax.servlet.RequestDispatcher
-import org.vraptor.VRaptorFilter
+begin
+  import org.vraptor.VRaptorFilter
+rescue
+  $VRAPTOR_VERSION = "Nice"
+end
+begin
+  import org.vraptor.plugin.niceurls.NiceURLFilter
+rescue
+  $VRAPTOR_VERSION = "Sexy"
+end
 import java.util.HashSet
 import java.util.Locale
 
@@ -23,7 +32,7 @@ def req_mocked(x)
 end
 
 req 'matchers'
-req_mocked 'config'
+req_mocked 'filter_config'
 req_mocked 'http_session'
 req_mocked 'http_request'
 req_mocked 'http_response'

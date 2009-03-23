@@ -55,7 +55,7 @@ describe MockedHttpRequest do
    it "should get cookies" do
 	@cookies = {'SESSIONID' => 'A943A7E30E919DC'}	   
    	req = MockedHttpRequest.new(nil, 'a/b/c', nil, nil, {}, nil, @cookies)
-  	req.get_cookies.should eql (@cookies)
+  	req.get_cookies.should eql(@cookies)
    end
 
 end

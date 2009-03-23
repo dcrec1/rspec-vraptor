@@ -16,7 +16,7 @@ def init
     
     $config = MockedFilterConfig.new($context)
     
-    $filter = VRaptorFilter.new
+    $filter = ($VRAPTOR_VERSION.eql?("Sexy") ? VRaptorFilter : NiceURLFilter).new
     $filter.init($config)
     
     $chain = mock(FilterChain)
