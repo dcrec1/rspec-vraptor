@@ -8,8 +8,8 @@ require 'rake/gempackagetask'
 require 'spec/rake/spectask'
  
 GEM = "rspec-vraptor"
-GEM_VERSION = "0.9.5"
-SUMMARY = "RSpec for VRaptor Sexy URLs"
+GEM_VERSION = "0.9.6"
+SUMMARY = "RSpec for VRaptor Sexy/Nice URLs"
 AUTHOR = "Diego Carrion"
 EMAIL = "dc.rec1@gmail.com"
 HOMEPAGE = "http://www.diegocarrion.com"
