@@ -43,16 +43,6 @@ end</code></pre>
 
 h2. SPECING:
 
-Before running specs:
-
-If you are using linux
-<pre><code>export CLASSPATH=inc/servlet-api-2.5.jar:inc/vraptor-2.6.3.jar:inc/log4j-1.2.12.jar</code></pre>
-
-If you are using windows
-<pre><code>set CLASSPATH=inc\servlet-api-2.5.jar;inc\vraptor-2.6.3.jar;inc\log4j-1.2.12.jar</code></pre>
-
-Then to spec:
-
 <pre><code>jruby -S rake spec</code></pre>
 
 h2. LICENSE:
