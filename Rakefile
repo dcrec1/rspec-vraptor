@@ -1,3 +1,5 @@
+Dir["inc/*.jar"].each { |jar| $CLASSPATH << jar }
+
 require 'rubygems'
 require 'rubygems/specification'
 require 'rake'
