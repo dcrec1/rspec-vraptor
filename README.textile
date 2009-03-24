@@ -36,7 +36,11 @@ describe UserController do
     it "should save param1 in session" do
       @session.attributes['param1'].should eql('value')
     end
-  
+ 
+    it do
+      @request.should be_viewless
+    end
+
   end
 
 end</code></pre>
