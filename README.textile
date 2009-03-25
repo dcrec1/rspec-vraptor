@@ -22,6 +22,7 @@ describe UserController do
       get "/user/xpto", :request => {'param1' => 'value1'}, 
                         :session => {'login' => 'dcrec1'}, 
                         :inject => {'user' => User.new("Bruce")},
+                        :cookies => {'session_id' => '534gh34hg34g3'},
                         :headers => {'Host' => '20.85.17.10'}
     end
     
