@@ -27,9 +27,9 @@ class MockedServletContext
   
   def get_resource_paths(path)
     paths = HashSet.new  
-    path = @basic_path = ($CLASSPATH.select {|p| p.include? "classes"})[0].sub("file:", "") if path.eql? "/WEB-INF/classes/"
+    path = @basic_path = ($CLASSPATH.select {|p| p.include? "/classes/"})[0].sub("file:", "") if path.eql? "/WEB-INF/classes/"
     Dir[path + "*"].each do |path|
-      path = path + "/" unless path.include? "."
+      path = path + "/" unless File::directory?(path)
       path = path.gsub(@basic_path, "/WEB-INF/classes/") if path.include? ".class"
       paths.add path
     end
