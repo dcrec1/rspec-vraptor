@@ -1,6 +1,13 @@
 require 'rubygems'
+require 'java'
 require 'spec'
 require 'rhyme'
+require 'slf4j-api-1.5.8'
+require 'slf4j-log4j12-1.5.8'
+require 'log4j-1.2.15'
+require 'picocontainer-2.7'
+require 'servlet-api-2.5' 
+require 'vraptor-3.1.3'
 
 import javax.servlet.http.Cookie
 import javax.servlet.http.HttpServletRequest
@@ -10,18 +17,19 @@ import javax.servlet.FilterConfig
 import javax.servlet.FilterChain
 import javax.servlet.ServletContext
 import javax.servlet.RequestDispatcher
+import java.util.HashSet
+import java.util.Locale
+
 begin
   import org.vraptor.VRaptorFilter
 rescue
   $VRAPTOR_VERSION = "Nice"
 end
 begin
-  import org.vraptor.plugin.niceurls.NiceURLFilter
+  import "br.com.caelum.vraptor.VRaptor"
 rescue
   $VRAPTOR_VERSION = "Sexy"
 end
-import java.util.HashSet
-import java.util.Locale
 
 def req(x)
   require File.dirname(__FILE__) + "/spec/vraptor/#{x}"

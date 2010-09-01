@@ -1,5 +1,5 @@
-$CLASSPATH << 'inc/log4j-1.2.12.jar'
-$CLASSPATH << 'inc/servlet-api-2.5.jar'
+$LOAD_PATH << 'inc/log4j-1.2.12.jar'
+$LOAD_PATH << 'inc/servlet-api-2.5.jar'
 
 require 'rubygems'
 require 'rubygems/specification'

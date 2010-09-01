@@ -30,5 +30,5 @@ describe "VRaptor" do
 end
 
 def filter
-  ($VRAPTOR_VERSION.eql?("Sexy") ? VRaptorFilter : NiceURLFilter)
+  ($VRAPTOR_VERSION.eql?("Sexy") ? VRaptorFilter : VRaptor)
 end
